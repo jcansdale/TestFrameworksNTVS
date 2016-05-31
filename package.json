@@ -12,6 +12,6 @@
   },
   "scripts": {
     "pretest": "tsc",
-    "test": "tape test/package_tests.js"
+    "test": "tape test/tests.js"
   }
 }
