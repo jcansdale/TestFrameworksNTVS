@@ -3,3 +3,14 @@
 ################################################################################
 
 /.vs
+/bin
+/node_modules
+/obj/Debug
+/test/tape/target_tests.js
+/test/tape/run_test.js
+/test/tape/find_tests.js
+/test/utilities.js
+/test/tests.js
+
+/ExportRunner/exportrunner.js
+/tape/tape.js
