@@ -15,7 +15,7 @@ export function findTests(testFramework: string, testFiles: string[]) {
     let args = [findTestsFile, testFramework,
         testFileList, discoverResultFile, projectFolder];
     let response = execNode(args);
-    assert.equal(response.status, 0, `${runTestsFile} failed with exit code ${response.status } and stdout: "${response.stdout }"`);
+    assert.equal(response.status, 0, `${runTestsFile} failed with exit code ${response.status }, message: ${response.message} and stdout: "${response.stdout}"`);
 
     return readResults(discoverResultFile);
 }
@@ -34,17 +34,18 @@ export function execTest(testName, testFile, workingFolder, projectFolder) {
 function execNode(args: string[]) {
     let stdout: string;
     let status = 0;
+    let message;
     try {
         let node = process.argv[0];
         stdout = spawn.execFileSync(node, args, { encoding: "utf8" });
     }
     catch (e) {
-        console.log(e);
         status = e.status;
         stdout = e.stdout;
+        message = e.message;
     }
 
-    return { status, stdout };
+    return { status, stdout, message };
 }
 
 function getTempDir() {
