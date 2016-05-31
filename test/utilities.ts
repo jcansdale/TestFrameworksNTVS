@@ -39,6 +39,7 @@ function execNode(args: string[]) {
         stdout = spawn.execFileSync(node, args, { encoding: "utf8" });
     }
     catch (e) {
+        console.log(e);
         status = e.status;
         stdout = e.stdout;
     }
