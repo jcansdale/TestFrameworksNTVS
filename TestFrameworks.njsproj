@@ -46,7 +46,9 @@
       <TestFramework>
       </TestFramework>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="test\tests.ts" />
+    <TypeScriptCompile Include="test\tests.ts">
+      <TestFramework>Tape</TestFramework>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="test\utilities.ts" />
     <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
