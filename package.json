@@ -1,5 +1,5 @@
 {
-  "name": "tape-adaptor",
+  "name": "testframeworks-ntvs",
   "version": "0.0.0",
   "description": "TapeAdaptor",
   "main": "app.js",
@@ -8,7 +8,8 @@
     "email": "jcansdale+npm@gmail.com"
   },
   "devDependencies": {
-    "tape": "^4.5.1"
+    "tape": "^4.5.1",
+    "typescript": "^1.8.10"
   },
   "scripts": {
     "pretest": "tsc",
