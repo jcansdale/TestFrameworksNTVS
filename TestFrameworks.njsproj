@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e5b95ef6-1f44-4bd3-b34c-60ad075d2591</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.ts</StartupFile>
+    <StartupFile>test\tests.ts</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -37,9 +37,6 @@
     <TypeScriptCompile Include="app.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <TypeScriptCompile Include="test\package_tests.ts">
-      <TestFramework>Tape</TestFramework>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="test\tape\target_tests.ts">
       <TestFramework>
       </TestFramework>
@@ -49,6 +46,7 @@
       <TestFramework>
       </TestFramework>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="test\tests.ts" />
     <TypeScriptCompile Include="test\utilities.ts" />
     <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
