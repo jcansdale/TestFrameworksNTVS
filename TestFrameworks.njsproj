@@ -53,11 +53,6 @@
     <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\tape\tape.d.ts" />
-    <TypeScriptCompile Include="scratch\example_tests.ts">
-      <SubType>Code</SubType>
-      <TestFramework>
-      </TestFramework>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="test\tape\find_tests.ts">
       <SubType>Code</SubType>
       <TestFramework>
@@ -65,7 +60,6 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="scratch\" />
     <Folder Include="tape\" />
     <Folder Include="temp\" />
     <Folder Include="test\" />
@@ -77,9 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="tape\tape.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="scratch\debug_scratch.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="find_tests.js" />
