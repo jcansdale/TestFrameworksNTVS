@@ -63,7 +63,6 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ExportRunner\" />
     <Folder Include="tape\" />
     <Folder Include="temp\" />
     <Folder Include="test\" />
@@ -80,9 +79,6 @@
   <ItemGroup>
     <None Include="find_tests.js" />
     <None Include="run_tests.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ExportRunner\exportrunner.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
