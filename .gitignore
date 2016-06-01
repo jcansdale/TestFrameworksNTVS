@@ -14,3 +14,5 @@
 
 /ExportRunner/exportrunner.js
 /tape/tape.js
+/test/ExportRunner/find_tests.js
+/test/ExportRunner/target_tests.js
