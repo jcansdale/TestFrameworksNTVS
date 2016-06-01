@@ -23,7 +23,7 @@ export function find_tests_OneTestWithName_ExpectName() {
 
     assert.equal(results.length, 1, "check for 1 test");
     const [{test: testName, file: testFile}] = results;
-    assert.equal(testName, expectName);
+    assert.equal(testName, " " + expectName, "This probably shouldn't start with a space!");
 }
 
 export function find_tests_OneTestWithDescription_ExpectDescription() {
@@ -34,7 +34,6 @@ export function find_tests_OneTestWithDescription_ExpectDescription() {
     let expectFile = utilities.tempFile(source);
 
     let results = utilities.findTests("mocha", [expectFile]);
-    console.log(results);
 
     assert.equal(results.length, 1, "check for 1 test");
     const [{test: testName, file: testFile}] = results;

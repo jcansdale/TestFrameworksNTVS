@@ -9,10 +9,10 @@ export function find_tests_PassTest_Expect1() {
 
     let results = utilities.findTests("tape", [expectFile]);
 
+    assert.equal(1, results.length);
     const [{test: testName, file: testFile}] = results;
     assert.equal(testName, expectedName);
     assert.equal(testFile, expectFile);
-    assert.equal(1, results.length);
 }
 
 export function find_tests_FailTest_Expect1() {
@@ -21,10 +21,10 @@ export function find_tests_FailTest_Expect1() {
 
     let results = utilities.findTests("tape", [expectFile]);
 
+    assert.equal(1, results.length);
     const [{test: testName, file: testFile}] = results;
     assert.equal(testName, expectedName);
     assert.equal(testFile, expectFile);
-    assert.equal(1, results.length);
 }
 
 export function find_tests_TwoTestFiles_Expect2() {
@@ -35,13 +35,13 @@ export function find_tests_TwoTestFiles_Expect2() {
 
     let results = utilities.findTests("tape", [expectFile1, expectFile2]);
 
+    assert.equal(2, results.length);
     const [{test: testName1, file: testFile1},
         {test: testName2, file: testFile2}] = results;
     assert.equal(testName1, expectedName1);
     assert.equal(testFile1, expectFile1);
     assert.equal(testName2, expectedName2);
     assert.equal(testFile2, expectFile2);
-    assert.equal(2, results.length);
 }
 
 export function find_tests_OneTest_LineAndColumnAtPosition1() {
