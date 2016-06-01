@@ -9,7 +9,14 @@ function exportRunner(moduleName) {
     for (let name in mod) {
         let fun = mod[name];
         test(`${moduleName}#${name}`, function (t) {
-            t.equal(fun(), undefined);
+            let error;
+            try {
+                fun();
+            }
+            catch (e) {
+                error = e;
+            }
+            t.equal(error, undefined);
             t.end();
         });
     }
