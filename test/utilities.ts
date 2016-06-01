@@ -12,7 +12,7 @@ export function findTests(testFramework: string, testFiles: string[]) {
     let discoverResultFile = path.join(__dirname, "result_file.json");
     unlinkLater(discoverResultFile);
 
-    let args = [findTestsFile, testFramework,
+    let args = ["--expose_debug_as=dbg", findTestsFile, testFramework,
         testFileList, discoverResultFile, projectFolder];
     let response = execNode(args);
     assert.equal(response.status, 0, `${runTestsFile} failed with exit code ${response.status }, message: ${response.message} and stdout: "${response.stdout}"`);
