@@ -41,7 +41,7 @@ export function find_tests_FunctionAtLine2_ExpectLine2() {
     let results = utilities.findTests("exportrunner", [testFile]);
 
     assert.equal(results.length, 1, "check for 1 test");
-    const [{line, column}] = results;
+    const [{line}] = results;
     assert.equal(line, 2, "check line number");
 }
 
@@ -52,7 +52,7 @@ export function find_tests_FunctionAtColumn2_ExpectColumn2() {
     let results = utilities.findTests("exportrunner", [testFile]);
 
     assert.equal(results.length, 1, "check for 1 test");
-    const [{line, column}] = results;
+    const [{column}] = results;
     assert.equal(column, 2, "check column number");
 }
 
