@@ -1,7 +1,10 @@
 var fs = require('fs');
 var path = require('path');
+var vm = require('vm');
 
 var find_tests = function (testFileList, discoverResultFile) {
+    var dbg = vm.runInDebugContext('Debug'); // TODO: Catch errors?
+
     var testList = [];
     testFileList.split(';').forEach(function (testFile) {
         var testCases;
