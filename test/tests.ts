@@ -3,6 +3,7 @@
 exportRunner("tape/find_tests");
 exportRunner("tape/run_test");
 exportRunner("ExportRunner/find_tests");
+exportRunner("mocha/find_tests");
 
 function exportRunner(moduleName) {
     var mod = require("./" + moduleName);
