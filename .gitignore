@@ -11,8 +11,6 @@
 /test/tape/find_tests.js
 /test/utilities.js
 /test/tests.js
-
-/ExportRunner/exportrunner.js
 /tape/tape.js
 /test/ExportRunner/find_tests.js
 /test/ExportRunner/target_tests.js
