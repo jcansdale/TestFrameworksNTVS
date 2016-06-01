@@ -1,6 +1,5 @@
 ﻿import path = require("path");
 import assert = require("assert");
-import tape = require("../../ExportRunner/exportrunner.js");
 import utilities = require("../utilities");
 
 export function find_tests_OneTest_Expect1Test() {
@@ -38,7 +37,7 @@ export function find_tests_TwoTestFiles_Expect2Tests() {
 //export function find_tests_OneTest_LineAndColumnAtPosition1() {
 //    let testFile = utilities.tempFile(passTestSource("__TestName__"));
 
-//    let results = utilities.findTests("tape", [testFile]);
+//    let results = utilities.findTests("exportrunner", [testFile]);
 
 //    const [{line, column}] = results;
 //    assert.equal(line, 1, "check line number");
