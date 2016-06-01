@@ -34,14 +34,32 @@ export function find_tests_TwoTestFiles_Expect2Tests() {
     assert.equal(2, results.length);
 }
 
-//export function find_tests_OneTest_LineAndColumnAtPosition1() {
-//    let testFile = utilities.tempFile(passTestSource("__TestName__"));
+export function find_tests_FunctionAtLine2_ExpectLine2() {
+    let source = testSourceLine2("__TestName__");
+    let testFile = utilities.tempFile(source);
 
-//    let results = utilities.findTests("exportrunner", [testFile]);
+    let results = utilities.findTests("exportrunner", [testFile]);
 
-//    const [{line, column}] = results;
-//    assert.equal(line, 1, "check line number");
-//    assert.equal(column, 1, "check column number");
-//}
+    assert.equal(results.length, 1, "check for 1 test");
+    const [{line, column}] = results;
+    assert.equal(line, 2, "check line number");
+}
 
-var testSource = name => `exports.${name} = function() {}`
+export function find_tests_FunctionAtColumn2_ExpectColumn2() {
+    let source = testSourceColumn2("__TestName__");
+    let testFile = utilities.tempFile(source);
+
+    let results = utilities.findTests("exportrunner", [testFile]);
+
+    assert.equal(results.length, 1, "check for 1 test");
+    const [{line, column}] = results;
+    assert.equal(column, 2, "check column number");
+}
+
+var testSource = name => `exports.${name} = function() {}`;
+
+var testSourceLine2 = name => `exports.${name} = function
+() {}`;
+
+var testSourceColumn2 = name => `exports.${name} = function
+ () {}`;
