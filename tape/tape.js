@@ -8,14 +8,14 @@ function find_tests(testFileList, discoverResultFile, projectFolder) {
         return;
     }
     
-    let harness = test.getHarness({ exit: false });
-    let tests = harness["_tests"];
+    var harness = test.getHarness({ exit: false });
+    var tests = harness["_tests"];
 
-    let count = 0;
-    let testList = [];
+    var count = 0;
+    var testList = [];
     testFileList.split(';').forEach(function (testFile) {
 
-        let testCases;
+        var testCases;
         process.chdir(path.dirname(testFile));
         try {
             testCases = require(testFile);
