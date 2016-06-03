@@ -38,7 +38,10 @@
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <TypeScriptCompile Include="test\ExportRunner\find_tests.ts" />
+    <TypeScriptCompile Include="test\ExportRunner\find_tests.ts">
+      <TestFramework>
+      </TestFramework>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="test\mocha\find_tests.ts" />
     <TypeScriptCompile Include="test\tape\target_tests.ts">
       <TestFramework>
@@ -77,7 +80,7 @@
     <Folder Include="typings\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="tape\tape.ts" />
+    <Compile Include="tape\tape.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="find_tests.js" />
