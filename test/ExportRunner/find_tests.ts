@@ -1,4 +1,5 @@
-﻿import path = require("path");
+﻿import vm = require("vm");
+import path = require("path");
 import assert = require("assert");
 import utilities = require("../utilities");
 
@@ -32,6 +33,17 @@ export function find_tests_TwoTestFiles_Expect2Tests() {
     assert.equal(testName2, expectedName2);
     assert.equal(testFile2, expectFile2);
     assert.equal(2, results.length);
+}
+
+// funcDetails.column returns start position of parameters
+export function assert_columns_0_based() {
+    var line0Func = vm.runInNewContext("(function func(a,b,c) {})");
+    var column0Func = vm.runInNewContext("(function func\n(a,b,c) {})");
+    var debug = vm.runInDebugContext('Debug');
+    var line0FuncDetails = debug.findFunctionSourceLocation(line0Func);
+    var column0FuncDetails = debug.findFunctionSourceLocation(column0Func);
+    assert.equal(line0FuncDetails.line, 0, "lines are 0 based");
+    assert.equal(column0FuncDetails.column, 0, "columns are 0 based");
 }
 
 export function find_tests_FunctionAtLine2_ExpectLine2() {
