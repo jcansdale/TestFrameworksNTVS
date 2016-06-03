@@ -1,14 +1,13 @@
-import fs = require('fs');
-import path = require('path');
+var fs = require('fs');
+var path = require('path');
 
-export function find_tests(testFileList, discoverResultFile, projectFolder) {
-
+function find_tests(testFileList, discoverResultFile, projectFolder) {
     var test = findTape(projectFolder);
     if (test === null) {
         console.error("NTVS_ERROR:", "Couldn't find 'tape' module relative to", projectFolder);
         return;
     }
-
+    
     let harness = test.getHarness({ exit: false });
     let tests = harness["_tests"];
 
@@ -42,8 +41,9 @@ export function find_tests(testFileList, discoverResultFile, projectFolder) {
     fs.writeSync(fd, JSON.stringify(testList));
     fs.closeSync(fd);
 };
+module.exports.find_tests = find_tests;
 
-export function run_tests(testName, testFile, workingFolder, projectFolder) {
+function run_tests(testName, testFile, workingFolder, projectFolder) {
     var testCases;
     process.chdir(path.dirname(testFile));
     try {
@@ -66,7 +66,8 @@ export function run_tests(testName, testFile, workingFolder, projectFolder) {
         console.error("NTVS_ERROR:", ex);
         return;
     }
-};
+}
+module.exports.run_tests = run_tests;
 
 function findTape(projectFolder) {
     var tapePath = path.join(projectFolder, 'node_modules', 'tape');

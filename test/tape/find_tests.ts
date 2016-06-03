@@ -1,6 +1,5 @@
 ﻿import path = require("path");
 import assert = require("assert");
-import tape = require("../../tape/tape");
 import utilities = require("../utilities");
 
 export function find_tests_PassTest_Expect1() {

@@ -1,7 +1,6 @@
 ﻿import assert = require('assert');
 import path = require('path');
 import utilities = require('../utilities');
-import tape = require("../../tape/tape");
 
 let testFile = path.join(__dirname, "target_tests.js");
 let workingFolder = __dirname;
