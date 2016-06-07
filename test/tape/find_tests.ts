@@ -43,14 +43,14 @@ export function find_tests_TwoTestFiles_Expect2() {
     assert.equal(testFile2, expectFile2);
 }
 
-export function find_tests_OneTest_LineAndColumnAtPosition1() {
+export function find_tests_OneTest_LineAndColumnAtPosition0() {
     let testFile = utilities.tempFile(passTestSource("__TestName__"));
 
     let results = utilities.findTests("tape", [testFile]);
 
     const [{line, column}] = results;
-    assert.equal(line, 1, "check line number");
-    assert.equal(column, 1, "check column number");
+    assert.equal(line, 0, "check line number");
+    assert.equal(column, 0, "check column number");
 }
 
 var passTestSource = name => `

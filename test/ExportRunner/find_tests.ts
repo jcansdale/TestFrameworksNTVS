@@ -46,7 +46,7 @@ export function assert_columns_0_based() {
     assert.equal(column0FuncDetails.column, 0, "columns are 0 based");
 }
 
-export function find_tests_FunctionAtLine2_ExpectLine2() {
+export function find_tests_FunctionLine_ExpectLine1() {
     let source = testSourceLine2("__TestName__");
     let testFile = utilities.tempFile(source);
 
@@ -54,10 +54,10 @@ export function find_tests_FunctionAtLine2_ExpectLine2() {
 
     assert.equal(results.length, 1, "check for 1 test");
     const [{line}] = results;
-    assert.equal(line, 2, "check line number");
+    assert.equal(line, 1, "check line number");
 }
 
-export function find_tests_FunctionAtColumn2_ExpectColumn2() {
+export function find_tests_FunctionColumn_ExpectColumn1() {
     let source = testSourceColumn2("__TestName__");
     let testFile = utilities.tempFile(source);
 
@@ -65,7 +65,7 @@ export function find_tests_FunctionAtColumn2_ExpectColumn2() {
 
     assert.equal(results.length, 1, "check for 1 test");
     const [{column}] = results;
-    assert.equal(column, 2, "check column number");
+    assert.equal(column, 1, "check column number");
 }
 
 var testSource = name => `exports.${name} = function() {}`;
