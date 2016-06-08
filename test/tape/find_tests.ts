@@ -53,6 +53,15 @@ export function find_tests_OneTest_LineAndColumnAtPosition0() {
     assert.equal(column, 0, "check column number");
 }
 
+export function find_tests_ErrorLoadingTestFile_NoTests() {
+    let testFile = utilities.tempFile("throw new Error('Boom!');");
+
+    let results = utilities.findTests("tape", [testFile]);
+
+    assert.equal(results.length, 0, "check no tests were found");
+    // error will be sent to stderr but tricky to check
+}
+
 var passTestSource = name => `
 var test = require("tape");
 test('${name}', function (t) {
